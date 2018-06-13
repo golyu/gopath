@@ -7,7 +7,6 @@ import (
 	"strings"
 	"fmt"
 	"os/exec"
-	"log"
 )
 
 var (
@@ -65,11 +64,9 @@ func ensureGoPath() {
 // runPrint 执行命令
 func runPrint(cmd string, args []string) {
 	eCmd := exec.Command(cmd, args...)
-	eCmd.Stdout = os.Stdout
-	eCmd.Stderr = os.Stderr
-	err := eCmd.Run()
+	out, err := eCmd.CombinedOutput()
 	if err != nil {
-		log.Fatal("执行命令发生错误:", err.Error())
+		fmt.Println("执行命令发生错误:", err)
 	}
-
+	fmt.Println(string(out))
 }
