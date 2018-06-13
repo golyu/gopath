@@ -23,8 +23,6 @@ func main() {
 			curPath = strings.TrimSuffix(pwd, "/src")
 		}
 		// 上级目录,也就是如果你在 /User/aaa/bbb/ccc/src/ddd下执行,我也会把/User/aaa/bbb/ccc设置为环境变量
-		x := filepath.Base(pwd)
-		fmt.Println(x)
 		upPath := strings.TrimSuffix(pwd, "/"+filepath.Base(pwd))
 		if strings.HasSuffix(upPath, "/src") {
 			curPath = strings.TrimSuffix(upPath, "/src")
