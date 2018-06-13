@@ -18,6 +18,8 @@ var (
 func main() {
 	//flag.StringVar(&curPath, "path", "", "要设置为动态path的路径,不设置则为当前路径,如果是在src下,就设置为src的上级目录")
 	//if curPath == "" {
+
+	flag.Parse()
 	// 当前路径
 	pwd, _ := os.Getwd()
 	curPath = pwd
@@ -36,8 +38,8 @@ func main() {
 
 	// 对应命令执行
 	cmds := flag.Args()
-	if len(cmds) > 2 {
-		runPrint(cmds[1], cmds[1:])
+	if len(cmds) > 1 {
+		runPrint(cmds[0], cmds[1:])
 	}
 }
 
