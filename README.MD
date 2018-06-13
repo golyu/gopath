@@ -6,7 +6,3 @@ go get -u github.com/golyu/gopath
 ```go
 gopath
 ```
-##### 设置指定目录为goPath
-```go
-gopath --path /User/xxx/xxx/xx
-```
