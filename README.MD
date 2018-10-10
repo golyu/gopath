@@ -6,3 +6,5 @@ go get -u github.com/golyu/gopath
 ```go
 gopath
 ```
+
+#### 目前go 1.11 module用起来很舒服,可以让项目脱离gopath了
